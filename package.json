@@ -1,0 +1,40 @@
+{
+  "name": "@jay-es/nano-match",
+  "version": "0.1.0",
+  "description": "`nano-match` is a tiny utility simplifying key-based matching in TypeScript, bringing elegance to your code.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@tsconfig/node20": "^20.1.2",
+    "tsup": "^8.0.1",
+    "vitest": "^1.2.2"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "tsup src/index.ts --clean --splitting --dts && tsup src/index.ts --format esm",
+    "format": "npx @biomejs/biome format --write .",
+    "lint": "npx @biomejs/biome lint .",
+    "test": "vitest"
+  },
+  "keywords": [
+    "typescript",
+    "pattern-matching",
+    "pattern",
+    "matching",
+    "switch-case",
+    "switch"
+  ],
+  "author": "jay-es",
+  "repository": "jay-es/nano-match",
+  "license": "MIT"
+}
